@@ -6,29 +6,53 @@
 # WEBSITE   : http://www.xentaos.org/
 ########################################################################################
 
-# Periapan Awal adalah memasang perangkat lunak yang nantinya
-# digunakan sebagai perkakas dalam pembuat distro dengan teknik debootsrap.
-# Perangkat lunak yang di Butuhkan
-# Buka Terminal dan Ketik perintah berikut :
-sudo apt-get install debootstrap syslinux isolinux squashfs-tools genisoimage memtest86+ rsync -y
-# Memulai Merakit Sistem Operasi (chroot)
-cd $HOME/Project
+# [ 1 ]---------------------------------------------------------------------------------
+#      Panduan      :   Memulai Merakit Sistem Operasi (chroot)
+#      Penjelasan   :
+#                       * 
+#      Catatan      :
+#                       * 
+# Buka Terminal dan Ketik Perintah Berikut :
+cd /home/$(whoami)/Project/
 sudo mount --bind /dev/ root32/dev
 sudo cp /etc/resolv.conf root32/etc/
 
-# Masuk chroot ke sistem operasi debootsrap yang sudah dibuat waktu pembuatan kerangka debootsrap
+# [ 2 ]---------------------------------------------------------------------------------
+#      Panduan      :   Masuk chroot ke sistem operasi debootsrap yang sudah 
+#                       dibuat waktu pembuatan kerangka debootsrap
+#      Penjelasan   :
+#                       * 
+#      Catatan      :
+#                       * 
+# Buka Terminal dan Ketik Perintah Berikut :
 sudo chroot root32
 mount -t proc none /proc && mount -t sysfs none /sys && mount -t devpts none /dev/pts
 export HOME=/root && export LC_ALL=C
 
-# Ini adalah Perintah untuk membuat hostname atau nama komputer cukup sekali saja.
+# [ 3 ]---------------------------------------------------------------------------------
+#      Panduan      :   Perintah untuk membuat hostname atau nama komputer cukup sekali saja.
+#      Penjelasan   :
+#                       * 
+#      Catatan      :
+#                       * 
+# Buka Terminal dan Ketik Perintah Berikut :
 echo "xenta" > /etc/hostname
 
-# Memulai Pemasangan Core & Kernel
-# Mencari Versi Kernel tersedia
+# [ 4 ]---------------------------------------------------------------------------------
+#      Panduan      :   Memulai Pemasangan Core & Kernel
+#      Penjelasan   :
+#                       * Mencari Versi Kernel tersedia
+#      Catatan      :
+#                       * 
+# Buka Terminal dan Ketik Perintah Berikut :
 apt-cache search linux-image
 
-# Memulai Update & Pemasangan Kernel serta paket core
+# [ 5 ]---------------------------------------------------------------------------------
+#      Panduan      :   Memulai Update & Pemasangan Kernel serta paket core
+#      Penjelasan   :
+#                       * Memasang paket paket utama
+#      Catatan      :
+#                       * 
+# Buka Terminal dan Ketik Perintah Berikut :
 apt-get update
-# Memasang paket paket utama
-apt-get install --no-install-recommends --yes --force-yes linux-image-4.4.0-21-generic casper lupin-casper network-manager nano
+apt-get install --no-install-recommends linux-image-4.4.0-21-generic casper lupin-casper network-manager nano -y
