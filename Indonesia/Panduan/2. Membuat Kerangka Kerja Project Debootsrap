@@ -1,15 +1,27 @@
 #!/bin/bash
-########################################################################3
-# XENTA DEBOOTSRAP SCRIPT
+########################################################################################
+# PANDUAN DEBOOTSRAPING
 # AUTHOR    : XENTA OS
-# LICENSE   : GNU GPL 3.0
+# LICENSE   : CC BY-SA 4.0
 # WEBSITE   : http://www.xentaos.org/
-########################################################################
-# Membuat Kerangka Directory Kerja
-# Jalankan Sebagai User Biasa. JIka Berada di posisi root silahkan keluar dan 
-# Jalankan perintah ini diterminal
-cd $HOME && mkdir -p Project/{root32,dvd32}
+########################################################################################
 
-# Membuat Kerangka Sistem Operasi Awal (Base Sistem)
-sudo debootstrap --arch=i386 --variant=minbase xenial $HOME/Project/root32 http://archive.ubuntu.com/ubuntu/
-# Ini Memerlukan Koneksi Internet dan Waktu Cukup lama Tunggu saja sampai Selesai
+
+# [ 1 ]---------------------------------------------------------------------------------
+#      Panduan      :   Membuat Kerangka Directory Kerja
+#      Penjelasan   :
+#                       * 
+#      Catatan      :
+#                       * Jalankan Sebagai User Biasa. Jika Berada di posisi root 
+#                         silahkan keluar dan jalankan sebagai user biasa.
+# Buka Terminal dan Ketik perintah berikut :
+mkdir -p /home/$(whoami)/Project/{root32,dvd32}
+
+# [ 2 ]---------------------------------------------------------------------------------
+#      Panduan      :   Membuat Kerangka Sistem Operasi Awal (Base Sistem)
+#      Penjelasan   :
+#                       * 
+#      Catatan      :
+#                       * Ini Memerlukan Koneksi Internet dan Waktu Cukup lama Tunggu saja sampai Selesai
+# Buka Terminal dan Ketik perintah berikut :
+sudo debootstrap --arch=i386 --variant=minbase xenial /home/$(whoami)/Project/root32 http://archive.ubuntu.com/ubuntu/
