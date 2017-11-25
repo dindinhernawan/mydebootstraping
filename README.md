@@ -1,16 +1,14 @@
 # panduan-debootstraping
 [Panduan] Sebuah Panduan Membuat Distro GNU/Linux menggunakan Teknik Debootstrap.
-<h1>Xenta Debootsrap</h1>
-<h3>Panduan Debootsrap Distro GNU/Linux</h3>
 <h2>Bahasa Indonesia</h2>
 <a>Panduan :</a>
 <ol>
-  <li>Persiapan Perangkat Lunak  </li>
-  <li>membuat kerangka kerja debootsrap</li>
-  <li>Memulai Merakit Sistem Operasi (chroot)</li>	
-  <li>Memulai Kembali Perakitan (chroot)</li>
-  <li>Keluar dari CHROOT</li>
-  <li>Membuat ISO Project Debootsrap</li>
+  <li>Persiapan Perangkat Lunak Project Debootsrap </li>
+  <li>Membuat Kerangka Kerja Project Debootsrap </li>
+  <li>Memulai Kembali Project Debootsrap Perakitan (chroot) </li>
+  <li>Memulai Project Debootsrap Perakitan Awal Sistem Operasi (chroot) </li>
+  <li>Keluar dari Project Debootsrap Perakitan (chroot) </li>
+  <li>Membuat Image ISO Project Debootsrap </li>
 </ol>
 
 <h2>Pustaka</h2>
