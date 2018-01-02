@@ -1,4 +1,4 @@
-**[ 1 ]---------------------------------------------------------------------------------**
+**[ 1 ]---------------------------------------------------------------------------------**  
 Panduan      : Periapan Awal adalah Menginstal Perangkat lunak yang di Butuhkan nantinya.  
 Penjelasan   : Digunakan sebagai perkakas dalam pembuat distro dengan teknik debootsrap.  
 Buka Terminal dan Ketik perintah berikut :  
