@@ -3,7 +3,8 @@ Panduan : Membuat Kerangka Directory Kerja.
 Penjelasan :  
 Catatan :  
  * Jalankan Sebagai User Biasa. Jika Berada di posisi root.  
- * Silahkan keluar dan jalankan sebagai user biasa.  
+ * Silahkan keluar dan jalankan sebagai user biasa. 
+ 
 Buka Terminal dan Ketik perintah berikut :
 ```bash
 mkdir -p /home/$(whoami)/Project/{root32,dvd32}
