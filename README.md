@@ -1,5 +1,5 @@
 # mydebootstraping
-[Panduan] Sebuah Panduan Membuat Distro GNU/Linux menggunakan Teknik Debootstrap.
+Sebuah Panduan Membuat Distro GNU/Linux menggunakan Teknik Debootstrap.
 
 ![GitHub issues](https://img.shields.io/github/issues/dindinG41TR3/mydebootstraping.svg)
 ![GitHub last commit](https://img.shields.io/github/last-commit/dindinG41TR3/mydebootstraping.svg)
