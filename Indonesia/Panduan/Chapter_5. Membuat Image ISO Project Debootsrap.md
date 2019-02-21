@@ -80,97 +80,93 @@ cat > isolinux << "EOF"
 EOF
 ```
 
-# [ 3 ]---------------------------------------------------------------------------------
-#      Panduan      :   Membuat List Paket & Info live sistem
-#      Penjelasan   :
-#                       * 
-#      Catatan      :
-#                       * 
-# Buka Terminal dan Ketik Perintah Berikut :
+**[ 3]---------------------------------------------------------------------------------**  
+Panduan      : Membuat List Paket & Info live sistem  
+Penjelasan   :  
+Catatan      :  
+Buka Terminal dan Ketik Perintah Berikut :  
+```bash
 cd /home/$(whoami)/Project/
 sudo chroot root32 dpkg-query -W --showformat='${Package} ${Version}\n' | sudo tee dvd32/casper/filesystem.manifest
 sudo cp -v dvd32/casper/filesystem.manifest dvd32/casper/filesystem.manifest-desktop
 sudo su
 printf $(sudo du -sx --block-size=1 root32 | cut -f1) > dvd32/casper/filesystem.size
 exit
-
-# [ 4a ]---------------------------------------------------------------------------------
-#      Panduan      :   Membuat Filesistem.squashfs STANDAR COMPRESS
-#      Penjelasan   :
-#                       * 
-#      Catatan      :
-#                       * 
-# Buka Terminal dan Ketik Perintah Berikut :
+```
+**[ 4a]---------------------------------------------------------------------------------**  
+Panduan      : Membuat Filesistem.squashfs STANDAR COMPRESS  
+Penjelasan   :  
+Catatan      :  
+Buka Terminal dan Ketik Perintah Berikut : 
+```bash
 cd /home/$(whoami)/Project/
 sudo mksquashfs root32 ./dvd32/casper/filesystem.squashfs
+```
 
-# [ 4b ]---------------------------------------------------------------------------------
-#      Panduan      :   Membuat Filesistem.squashfs HIGH COMPRESS
-#      Penjelasan   :
-#                       * 
-#      Catatan      :
-#                       * 
-# Buka Terminal dan Ketik Perintah Berikut :
+**[ 4b]---------------------------------------------------------------------------------**  
+Panduan      : Membuat Filesistem.squashfs HIGH COMPRESS  
+Penjelasan   :  
+Catatan      :  
+Buka Terminal dan Ketik Perintah Berikut :  
+```bash
 cd /home/$(whoami)/Project/
 sudo mksquashfs root32 dvd32/casper/filesystem.squashfs -b 1048576 -comp xz -Xdict-size 100%
+```
 
-# [ 5 ]---------------------------------------------------------------------------------
-#      Panduan      :   Membuat md5sum iso
-#      Penjelasan   :
-#                       * 
-#      Catatan      :
-#                       * 
-# Buka Terminal dan Ketik Perintah Berikut :
+**[ 5 ]---------------------------------------------------------------------------------**  
+Panduan      : Membuat md5sum iso  
+Penjelasan   :  
+Catatan      :  
+Buka Terminal dan Ketik Perintah Berikut :  
+```bash
 cd /home/$(whoami)/Project//dvd32
 find -type f -print0 | sudo xargs -0 md5sum | grep -v isolinux/boot.cat | sudo tee MD5SUMS
-
-# [ 6 ]---------------------------------------------------------------------------------
-#      Panduan      :   Membuat ISO Rilis 
-#      Penjelasan   :
-#                       * 
-#      Catatan      :
-#                       * 
-# Buka Terminal dan Ketik Perintah Berikut :
+```
+**[ 6 ]---------------------------------------------------------------------------------**  
+Panduan      : Membuat ISO Rilis  
+Penjelasan   :  
+Catatan      :  
+Buka Terminal dan Ketik Perintah Berikut :  
+```bash
 cd /home/$(whoami)/Project/ 
 sudo mkisofs -r -V "xentaos-1.3lts-console-i386" -cache-inodes -J -l -b isolinux/isolinux.bin -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table -o ./xentaos-1.3lts-console-i386.iso dvd32
 sudo chmod 777 xentaos-1.3lts-console-i386.iso
+```
 
-# [ 7 ]---------------------------------------------------------------------------------
-#      Panduan      :   Membuat ISOHybrid
-#      Penjelasan   :
-#                       * 
-#      Catatan      :
-#                       * 
-# Buka Terminal dan Ketik Perintah Berikut :
+**[ 7 ]---------------------------------------------------------------------------------**  
+Panduan      :  Membuat ISOHybrid  
+Penjelasan   :  
+Catatan      :  
+Buka Terminal dan Ketik Perintah Berikut :  
+```bash
 cd /home/$(whoami)/Project/
 isohybrid xentaos-1.3lts-console-i386.iso
-
-# [ 8a ]---------------------------------------------------------------------------------
-#      Panduan      :   Membuat MD5sum
-#      Penjelasan   :
-#                       * 
-#      Catatan      :
-#                       * 
-# Buka Terminal dan Ketik Perintah Berikut :
+```
+**[ 8a ]---------------------------------------------------------------------------------**  
+Panduan      : Membuat MD5sum  
+Penjelasan   :  
+Catatan      :  
+Buka Terminal dan Ketik Perintah Berikut :  
+```bash
 cd /home/$(whoami)/Project/
 md5sum xentaos-1.3lts-console-i386.iso > xentaos-1.3lts-console-i386.iso.md5sum
+```
 
-# [ 8b ]---------------------------------------------------------------------------------
-#      Panduan      :   Membuat SHA1sum
-#      Penjelasan   :
-#                       * 
-#      Catatan      :
-#                       * 
-# Buka Terminal dan Ketik Perintah Berikut :
+**[ 8b ]---------------------------------------------------------------------------------**  
+Panduan      : Membuat SHA1sum  
+Penjelasan   :  
+Catatan      :  
+Buka Terminal dan Ketik Perintah Berikut :  
+```bash
 cd /home/$(whoami)/Project/
 sha1sum xentaos-1.3lts-console-i386.iso > xentaos-1.3lts-console-i386.iso.sha1sum
-
-# [ 8c ]---------------------------------------------------------------------------------
-#      Panduan      :   Membuat SHA2sum
-#      Penjelasan   :
-#                       * 
-#      Catatan      :
-#                       * 
-# Buka Terminal dan Ketik Perintah Berikut :
+```
+**[ 8c ]---------------------------------------------------------------------------------**  
+Panduan      : Membuat SHA2sum  
+Penjelasan   :  
+Catatan      :  
+Buka Terminal dan Ketik Perintah Berikut :  
+```bash
 cd /home/$(whoami)/Project/
 sha2sum xentaos-1.3lts-console-i386.iso > xentaos-1.3lts-console-i386.iso.sha2sum
+```
