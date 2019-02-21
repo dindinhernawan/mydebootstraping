@@ -1,27 +1,17 @@
-#!/bin/bash
-########################################################################################
-# PANDUAN DEBOOTSRAPING
-# AUTHOR    : XENTA OS
-# LICENSE   : CC BY-SA 4.0
-# WEBSITE   : http://www.xentaos.com/
-########################################################################################
-
-# [ 1 ]---------------------------------------------------------------------------------
-#      Panduan      :   Menghapus filesistem.squashfs jika sebelumnya membuat filesistem.squashfs 
-#      Penjelasan   :
-#                       * 
-#      Catatan      :
-#                       * Jika Pertama kali membuat iso lewatkan perintah dibawah ini
-# Buka Terminal dan Ketik Perintah Berikut :
+**[ 1 ]---------------------------------------------------------------------------------**  
+Panduan      : Menghapus filesistem.squashfs jika sebelumnya membuat filesistem.squashfs  
+Penjelasan   :  
+Catatan      : Jika Pertama kali membuat iso lewatkan perintah dibawah ini  
+Buka Terminal dan Ketik Perintah Berikut :
+```bash
 sudo rm /home/$(whoami)/Project/dvd32/casper/filesystem.squashfs 
-
-# [ 2 ]---------------------------------------------------------------------------------
-#      Panduan      :   Membuat Folder Kerangka dvd32 Pertama kali.
-#      Penjelasan   :
-#                       * 
-#      Catatan      :
-#                       * jika sudah buat lewatin saja
-# Buka Terminal dan Ketik Perintah Berikut : 
+```
+**[ 2 ]---------------------------------------------------------------------------------**  
+Panduan      :   Membuat Folder Kerangka dvd32 Pertama kali.  
+Penjelasan   :  
+Catatan      : jika sudah buat lewatin saja  
+Buka Terminal dan Ketik Perintah Berikut :  
+```bash
 cd /home/$(whoami)/Project/dvd32
 sudo mkdir casper .disk isolinux
 sudo cp /home/$(whoami)/Project/root32/boot/vmlinuz-4.4.0-21-generic /home/$(whoami)/Project/dvd32/casper/vmlinuz
@@ -30,7 +20,9 @@ cd /home/$(whoami)/Project/dvd32/isolinux/
 sudo wget -c https://github.com/dindinG41TR3/panduan-debootstraping/raw/master/Indonesia/Modul/isolinux/isolinux.bin
 sudo cp /usr/lib/syslinux/modules/bios/Idllinux.c32 /home/$(whoami)/Project/dvd32/isolinux/
 sudo cp /boot/memtest86+.bin dvd32/casper/memtest
+```
 
+```bash
 cd /home/$(whoami)/Project/dvd32/
 cat > README.diskdefines << "EOF"
 #define DISKNAME  Xenta OS
@@ -43,13 +35,15 @@ cat > README.diskdefines << "EOF"
 #define TOTALNUM  0
 #define TOTALNUM0  1
 EOF
-
+```
+```bash
 cd /home/$(whoami)/Project/dvd32/.disk
 sudo echo "base_installable" > base_installable
 sudo echo "full_cd/single" > cd_type
 sudo echo "Xenta OS 1.3" > info
 sudo echo "http://www.xentaos.org/" > release_notes_url
-
+```
+```bash
 cd /home/$(whoami)/Project/dvd32/isolinux
 cat > isolinux.cfg << "EOF"
 DEFAULT live
@@ -59,7 +53,8 @@ LABEL live
   append boot=casper initrd=/casper/initrd.lz --
 DISPLAY isolinux
 EOF
-
+```
+```bash
 cd /home/$(whoami)/Project/dvd32/isolinux
 cat > isolinux << "EOF"
 *******************************************************************************
@@ -83,6 +78,7 @@ cat > isolinux << "EOF"
                                
 *******************************************************************************
 EOF
+```
 
 # [ 3 ]---------------------------------------------------------------------------------
 #      Panduan      :   Membuat List Paket & Info live sistem
