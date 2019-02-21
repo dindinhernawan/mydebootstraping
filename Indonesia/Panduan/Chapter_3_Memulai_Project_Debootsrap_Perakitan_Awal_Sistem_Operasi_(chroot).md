@@ -11,8 +11,8 @@ sudo cp /etc/resolv.conf root32/etc/
 
 64-Bit
 cd /home/$(whoami)/Project/
-sudo mount --bind /dev/ root32/dev
-sudo cp /etc/resolv.conf root32/etc/
+sudo mount --bind /dev/ root64/dev
+sudo cp /etc/resolv.conf root64/etc/
 ```
 
 **[ 2 ]---------------------------------------------------------------------------------**  
@@ -27,7 +27,7 @@ mount -t proc none /proc && mount -t sysfs none /sys && mount -t devpts none /de
 export HOME=/root && export LC_ALL=C
 
 64-Bit
-sudo chroot root32
+sudo chroot root64
 mount -t proc none /proc && mount -t sysfs none /sys && mount -t devpts none /dev/pts
 export HOME=/root && export LC_ALL=C
 ```
