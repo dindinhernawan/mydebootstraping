@@ -11,7 +11,7 @@ Buka Terminal dan Ketik perintah berikut :
 mkdir -p /home/$(whoami)/project/i386/{root,dvd}
 
 64-Bit
-mkdir -p /home/$(whoami)/roject/amd64/{root,dvd}
+mkdir -p /home/$(whoami)/project/amd64/{root,dvd}
 ```
 
 **[ 2 ]---------------------------------------------------------------------------------**  
