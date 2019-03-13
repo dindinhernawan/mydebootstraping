@@ -8,14 +8,12 @@ Buka Terminal dan Ketik Perintah Berikut :
 ```bash
 apt-get clean && apt-get autoremove && rm -rf /tmp/* ~/.bash_history && umount /proc && umount /sys && umount /dev/pts
 exit
-sudo umount root32/dev
-sudo umount mnt
+sudo umount root/dev
 ```
 
 64-Bit  
 ```bash
 apt-get clean && apt-get autoremove && rm -rf /tmp/* ~/.bash_history && umount /proc && umount /sys && umount /dev/pts
 exit
-sudo umount root64/dev
-sudo umount mnt
+sudo umount root/dev
 ```
