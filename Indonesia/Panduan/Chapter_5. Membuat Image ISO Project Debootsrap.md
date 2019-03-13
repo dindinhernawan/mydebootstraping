@@ -41,7 +41,7 @@ cd /home/$(whoami)/project/i386/dvd/.disk
 sudo echo "base_installable" > base_installable
 sudo echo "full_cd/single" > cd_type
 sudo echo "Xenta OS 2.0" > info
-sudo echo "http://www.xentaos.org/" > release_notes_url
+sudo echo "http://www.xentaos.com/" > release_notes_url
 ```
 ```bash
 cd /home/$(whoami)/project/i386/dvd/isolinux
