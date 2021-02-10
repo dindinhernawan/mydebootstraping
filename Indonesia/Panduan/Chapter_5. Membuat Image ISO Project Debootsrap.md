@@ -71,7 +71,7 @@ cat > isolinux << "EOF"
         /XXXXXX/ \XXXXXXXXXXX  Facebook     : Xenta OS
        /XXXXXX/   /XXXXXXXXXX  Youtube      : Xenta OS Linux
       /XXXXX/    /XXX/XXXXXXX  Twitter      : @xentaoslinux
-     /XXX/      /XX/  \XXXXXX  IRC Channel (freenode) #xentaos
+     /XXX/      /XX/  \XXXXXX  IRC Channel (freenode) #xentaoslinux
     /XX/       /X/     \XXXXX  
    /X/         /         \XXX  
    /                       \X  
