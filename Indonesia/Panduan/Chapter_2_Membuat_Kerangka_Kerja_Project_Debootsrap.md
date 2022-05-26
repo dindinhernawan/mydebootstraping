@@ -8,10 +8,10 @@ Catatan :
 Buka Terminal dan Ketik perintah berikut :
 ```bash
 32-Bit
-mkdir -p /home/$(whoami)/Project/{root32,dvd32}
+mkdir -p /home/$(whoami)/project/i386/{root,dvd}
 
 64-Bit
-mkdir -p /home/$(whoami)/Project/{root64,dvd64}
+mkdir -p /home/$(whoami)/project/amd64/{root,dvd}
 ```
 
 **[ 2 ]---------------------------------------------------------------------------------**  
@@ -23,8 +23,8 @@ Catatan :
 Buka Terminal dan Ketik perintah berikut :  
 ```bash
 32-Bit
-sudo debootstrap --arch=i386 --variant=minbase xenial /home/$(whoami)/Project/root32 http://archive.ubuntu.com/ubuntu/
+sudo debootstrap --arch=i386 --variant=minbase xenial /home/$(whoami)/project/i386/root http://archive.ubuntu.com/ubuntu/
 
 64-Bit
-sudo debootstrap --arch=i386 --variant=minbase xenial /home/$(whoami)/Project/root64 http://archive.ubuntu.com/ubuntu/
+sudo debootstrap --arch=amd64 --variant=minbase xenial /home/$(whoami)/project/amd64/root http://archive.ubuntu.com/ubuntu/
 ```
