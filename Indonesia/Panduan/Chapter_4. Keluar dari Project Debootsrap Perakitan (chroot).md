@@ -9,7 +9,8 @@ Buka Terminal dan Ketik Perintah Berikut :
 apt-get clean
 apt-get autoremove
 rm -rf /tmp/* ~/.bash_history
-umount /proc && umount /sys
+umount /proc
+umount /sys
 umount /dev/pts
 exit
 sudo umount ./root/dev
